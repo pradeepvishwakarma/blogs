@@ -12,7 +12,8 @@ SMART (Substitutable Medical Applications, Reusable Technologies) backend authen
 
 2. **JWT-Based Authentication**  
    - The backend client generates a **JWT (JSON Web Token)** signed with its **private key**.  
-   - The JWT is used to request an **OAuth 2.0 access token**.  
+   - The JWT is used to request an **OAuth 2.0 access token**.
+   - **JWTS** submitted to FHIR Server to know your RSA key pair and validate the authentication request. There are different ways to share **jwks** with server to effienctly know any change in keys or rotation of keys. 
 
 3. **Scopes and Permissions**  
    - Access is controlled via **FHIR scopes**, e.g.:  
@@ -48,23 +49,10 @@ This will generate:
 
 
 ### **Step 2: Use JWT for Authentication**
-After generating the RSA keys, a JWT can be created and signed with the private key to request an OAuth 2.0 access token. We can use [create_jwt_and_assertion.py](create_jwt_and_assertion.py) script to generate JWT public key and JWT assertion for authentication flow.
+After generating the RSA keys, a JWT can be created and signed with the private key to request an OAuth 2.0 access token. We can use [create_jwt_assertion.py](create_jwt_assertion.py) script to generate JWT assertion for authentication flow.
 
-- **JWT key** will be submitted to FHIR server to know your public key and validate your private key signed JWT assertion for authentication flow.
-- **JWT Assertion** will be used in authetication flow to obtain the access token for applicable scopes.
-
-#### Example - JWT Key and Assertion
+#### Example - JWT Assertion
 ```json
-Generated JWT Key:
-{
-    "kty": "RSA",
-    "n": "4g1mQ...",
-    "e": "AQAB",
-    "use": "sig",
-    "alg": "RS384",
-    "kid": "5f2e8a1e-9c84-4e30-a0d6-f49d2bdb38ef"
-}
-
 Generated JWT Assertion:
 eyJhbGciOiJSUzM4NCIsInR5cCI6IkpXVCIsI..
 ```
