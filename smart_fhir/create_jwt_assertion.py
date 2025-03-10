@@ -5,6 +5,8 @@ import uuid
 import datetime
 from cryptography.hazmat.primitives import serialization
 
+print(jwt.__version__)
+
 def load_private_key_from_file(file_path):
     """
     Loads an RSA private key from a PEM file.
@@ -41,6 +43,13 @@ def create_jwt_assertion(private_key, aud, client_id, kid, rsa_alg="RS384"):
         "nbf": epoch_now,
         "iat": epoch_now
     }
+
+    # Extract private key in PEM format
+    pem_private_key = private_key.private_bytes(
+        encoding=serialization.Encoding.PEM,
+        format=serialization.PrivateFormat.PKCS8,
+        encryption_algorithm=serialization.NoEncryption()
+    )
 
     # Create signed JWT
     jwt_token = jwt.encode(payload, private_key, algorithm=rsa_alg, headers=header)
