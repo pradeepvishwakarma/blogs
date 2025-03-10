@@ -6,7 +6,7 @@ Welcome to the blog index! This document serves as a structured guide to all ava
 
 | #  | Blog Title                              | Description                                       | Link |
 |----|----------------------------------------|-------------------------------------------------|------|
-| 1  | **SMART backend authe FHIR Server   ** | Understanding SMART auth flow and quick setup.  | [Read More](./smart_fhir/) |
+| 1  | **SMART backend authentication on FHIR Auth Server**    | Understanding SMART auth flow and quick setup.  | [Read More](./smart_fhir/) |
 
 ## 📌 How to Use
 
