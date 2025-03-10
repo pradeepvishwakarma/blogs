@@ -13,7 +13,7 @@ SMART (Substitutable Medical Applications, Reusable Technologies) backend authen
 2. **JWT-Based Authentication**  
    - The backend client generates a **JWT (JSON Web Token)** signed with its **private key**.  
    - The JWT is used to request an **OAuth 2.0 access token**.
-   - **JWTS** submitted to FHIR Server to know your RSA key pair and validate the authentication request. There are different ways to share **jwks** with server to effienctly know any change in keys or rotation of keys. 
+   - **JWKS** submitted to FHIR Server to know your RSA key pair and validate the authentication request. There are different ways to share **jwks** with server to effienctly know any change in keys or rotation of keys. 
 
 3. **Scopes and Permissions**  
    - Access is controlled via **FHIR scopes**, e.g.:  
