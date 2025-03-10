@@ -52,7 +52,7 @@ This will generate:
 After generating the RSA keys, a JWT can be created and signed with the private key to request an OAuth 2.0 access token. We can use [create_jwt_assertion.py](create_jwt_assertion.py) script to generate JWT assertion for authentication flow.
 
 #### Example - JWT Assertion
-```json
+```
 Generated JWT Assertion:
 eyJhbGciOiJSUzM4NCIsInR5cCI6IkpXVCIsI..
 ```
@@ -62,9 +62,9 @@ Once the JWT is signed, exchange it for an access token.
 
 #### Example Token Request
 ```http
-POST /token HTTP/1.1  
-Host: auth.fhirserver.com  
-Content-Type: application/x-www-form-urlencoded  
+POST /token HTTP/1.1
+Host: auth.fhirserver.com
+Content-Type: application/x-www-form-urlencoded
 
 grant_type=client_credentials
 &client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
