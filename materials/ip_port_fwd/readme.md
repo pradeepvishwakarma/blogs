@@ -3,6 +3,8 @@
 ## **Introduction**
 Connecting Azure Data Factory (ADF) to a **VNet-integrated PostgreSQL server** can be tricky. Traditionally, setting up **port forwarding with `iptables`** requires logging into the **Self-Hosted Integration Runtime (SHIR) Linux VM** and manually configuring rules. But let’s be honest—manual setup is prone to errors, inconsistent configurations, and unnecessary operational overhead.
 
+Microsoft provides a manual approach to achieve this setup, which you can find [here](https://techcommunity.microsoft.com/blog/adforpostgresql/how-to-access-azure-postgresql-flex-server-from-adf-managed-vnet-using-a-private/3707742). However, in this guide, we’ll focus on automating the process using the Azure VM Custom Script Extension with Terraform, ensuring a repeatable, scalable, and error-free deployment. 🚀
+
 ### **The Solution? Automation!** 🚀
 By leveraging **Azure VM Custom Script Extension and Terraform**, we can automate the entire process. This ensures:
 
